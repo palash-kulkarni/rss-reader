@@ -1,0 +1,8 @@
+- if @feed.errors.any?
+  - @feed.errors.full_messages.each do |message|
+    %li
+      = message
+
+= form_for @feed do |f|
+  = f.text_field :url
+  = f.submit

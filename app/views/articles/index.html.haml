@@ -1,0 +1,17 @@
+%table
+  %tr
+    %th
+      Title
+    %th
+      Delete
+    %th
+      Edit
+  - @articles.each do |article|
+    %tr
+      - article.title
+    %tr
+      %a#delete-article-url{ href: 'javascript:void(0)' }
+        Delete
+    %tr
+      %a#nedit-article-url{ href: 'javascript:void(0)' }
+        Edit
