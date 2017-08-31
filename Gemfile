@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.2'
 
 gem 'pg', '~> 0.21.0'
 gem 'haml', '~> 5.0.2'
+gem 'bootstrap-sass', '~> 3.2.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

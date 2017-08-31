@@ -1,6 +1,5 @@
 class Article < ApplicationRecord
-  belongs_to :feed, foreign_key: :feed_id, class_name: 'Article',
-                    inverse_of: :articles
+  belongs_to :feed, foreign_key: :feed_id
 
-  validates :title, :published_at, presence: true
+  validates :title, :link, :published_at, :description, presence: true
 end

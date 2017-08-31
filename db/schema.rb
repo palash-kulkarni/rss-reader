@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 20170830120617) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
+    t.text     "description"
+    t.string   "link"
     t.datetime "published_at"
     t.integer  "feed_id"
     t.datetime "created_at",   null: false

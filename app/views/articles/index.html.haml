@@ -1,17 +1,16 @@
-%table
-  %tr
-    %th
-      Title
-    %th
-      Delete
-    %th
-      Edit
-  - @articles.each do |article|
+%div{ class: 'row' }
+  %h3{ class: 'text-center' }
+    Articles
+%div{ class: 'row' }
+  %div{ class: 'col-md-2 pull-right' }
+    = link_to 'Go to Feeds', feeds_path, class: 'btn-sm btn-primary'
+%table{ class: 'table' }
+  %thead
     %tr
-      - article.title
-    %tr
-      %a#delete-article-url{ href: 'javascript:void(0)' }
-        Delete
-    %tr
-      %a#nedit-article-url{ href: 'javascript:void(0)' }
-        Edit
+      %th
+        Title
+  %tbody
+    - @articles.each do |article|
+      %tr
+        %td
+          = link_to article.title, article.link, target: :_blank

@@ -1,0 +1,24 @@
+%div{ class: 'row' }
+  %h3{ class: 'text-center' }
+    Feeds
+%div{ class: 'row' }
+  %div{ class: 'col-md-2 pull-right' }
+    = link_to 'Add New', new_feed_path, class: 'btn-sm btn-primary'
+  %div{ class: 'col-md-2 pull-right' }
+    = link_to 'Go to Articles', root_path, class: 'btn-sm btn-primary'
+%table{ class: 'table' }
+  %thead
+    %tr
+      %th
+        URL
+      %th
+      %th
+  %tbody
+    - @feeds.each do |feed|
+      %tr{ id: "feed-#{feed.id}" }
+        %td
+          = link_to feed.url, target: :_blank
+        %td
+          = link_to 'Edit', edit_feed_path(feed.id)
+        %td
+          = link_to 'Delete', feed_path(feed.id), { remote: true, method: :delete }

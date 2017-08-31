@@ -1,8 +1,18 @@
 - if @feed.errors.any?
-  - @feed.errors.full_messages.each do |message|
-    %li
-      = message
+  %div{ class: 'well' }
+    %h4
+      Errors
+    %ul
+      - @feed.errors.full_messages.each do |message|
+        %li
+          = message
 
-= form_for @feed do |f|
-  = f.text_field :url
-  = f.submit
+= form_for @feed, class: 'form-horizontal' do |f|
+  %div{ class: 'form-group' }
+    %div{ class: 'col-md-2' }
+      = f.label :url
+    %div{ class: 'col-md-6' }
+      = f.text_field :url, class: 'form-control', placeholder: 'Enter URL'
+  %div{ class: 'form-group' }
+    %div{ class: 'col-md-8' }
+      = f.submit
